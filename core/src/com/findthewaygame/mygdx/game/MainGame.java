@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainGame extends ApplicationAdapter {
 	public SpriteBatch batch;
+	public String StateGame = "GameRunning";
 	private int width;
 	private int height;
 	private DrawMap DataMap;
@@ -28,7 +29,7 @@ public class MainGame extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		DataMap.DrawBlock();
 

@@ -14,8 +14,10 @@ public class DrawMap {
 	private int AllX;
 	private int AllY;
 	private int SizeBlock;
-	private Texture WhiteBlock;
-	public SpriteBatch WhiteBlockSprite = new SpriteBatch();
+	private Texture WhiteBlock = new Texture("WhiteBlock.png");
+	private Texture BlackBlock = new Texture("BlackBlock.png");
+	private Texture WallBlock = new Texture("WallBlock.png");
+	public SpriteBatch BlockSprite = new SpriteBatch();
 	
 	public DrawMap(int SizeBlock, int AllX, int AllY) {
 		this.ArrayMap = new int[AllX][AllY];
@@ -30,20 +32,16 @@ public class DrawMap {
 				ArrayMap[x][y] = 0;
 			}
 		}
-		System.out.println("Save Draw Block");
-		this.WhiteBlock = new Texture("WhiteBlock.jpg");
-		System.out.println("After Save Draw Block");
 	}
 	
 	public void DrawBlock(){
-		WhiteBlockSprite.begin();
+		BlockSprite.begin();
 		System.out.println("In Draw Block");
 		for(int x = 0; x < AllX; x++) {
 			for(int y = 0; y< AllY; y++) {
-				WhiteBlockSprite.draw(this.WhiteBlock, (x*SizeBlock), (y*SizeBlock));
-
+				BlockSprite.draw(BlackBlock, (x*SizeBlock), (y*SizeBlock));
 			}
 		}
-		WhiteBlockSprite.end();
+		BlockSprite.end();
 	}
 }
