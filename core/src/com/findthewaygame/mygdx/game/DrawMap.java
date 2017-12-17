@@ -1,21 +1,17 @@
 package com.findthewaygame.mygdx.game;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.GL20;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
-
 
 public class DrawMap {
 	public int[][] ArrayMap;
 	public int AllX;
 	public int AllY;
-	private int SizeBlock;
+	public int SizeBlock;
 	private SetMap SetArrayMap = new SetMap();
 	private Texture WhiteBlock = new Texture("WhiteBlock.png");
+	private Texture GreenBlock = new Texture("GreenBlock.png");
 	private Texture BlackBlock = new Texture("BlackBlock.png");
 	private Texture WallBlock = new Texture("WallBlock.png");
 	public SpriteBatch BlockSprite = new SpriteBatch();
@@ -41,10 +37,12 @@ public class DrawMap {
 		//System.out.println("In Draw Block");
 		for(int x = 0; x < AllX; x++) {
 			for(int y = 0; y< AllY; y++) {
-				if(ArrayMap[x][y] == 0)
+				if(ArrayMap[x][y] == 0 | ArrayMap[x][y] == 2)
 					BlockSprite.draw(BlackBlock, (x*SizeBlock), (y*SizeBlock));
 				else if(ArrayMap[x][y] == 1)
 					BlockSprite.draw(WallBlock, (x*SizeBlock), (y*SizeBlock));
+				else if(ArrayMap[x][y] == 8)
+					BlockSprite.draw(GreenBlock, (x*SizeBlock), (y*SizeBlock));
 			}
 		}
 		BlockSprite.end();
