@@ -21,8 +21,19 @@ public class EnemyCharacter {
 	}
 	
 	public void DrawPicture() {
-		for(int Count = 0 ; Count < this.CountType1 ; Count++)
+		for(int Count = 0 ; Count < this.CountType1 ; Count++) {
 			this.EnemyType01[Count].DrawPicture();
+			if(this.Game.CheckCharacter.CheckBlock(this.Game.Player,this.EnemyType01[Count])) {
+				this.Game.GameStatus = "YouLose";
+				this.Game.Type = 1;
+				this.Game.Main.StateGame = "GameResult";
+				this.Game.Main.create();
+				this.Game.DataMap.dispose();
+			}
+			else {
+				System.out.println("False");
+			}
+		}
 	}
 	
 	private void CreateEnemy(int Type) {

@@ -48,11 +48,13 @@ public class BlinkToGap {
 			}
 		}
 		else if(Direction == "Down"){
-			//System.out.println("In Down");
-			if(Wall.MapArray[(this.LeftBottomCorner[0]+1)/Wall.Map.SizeBlock][this.LeftBottomCorner[1]/Wall.Map.SizeBlock - 1] == 1 || Wall.MapArray[this.RightBottomCorner[0]/Wall.Map.SizeBlock][this.RightBottomCorner[1]/Wall.Map.SizeBlock -1] ==1) {
-				//System.out.println("In Down 2");
+			System.out.println("In Down");
+			System.out.println(Wall.MapArray[(this.LeftBottomCorner[0]+1)/Wall.Map.SizeBlock][this.LeftBottomCorner[1]/Wall.Map.SizeBlock - 1]);
+			System.out.println(Wall.MapArray[this.RightBottomCorner[0]/Wall.Map.SizeBlock][this.RightBottomCorner[1]/Wall.Map.SizeBlock -1]);
+			if(Wall.MapArray[(this.LeftBottomCorner[0]+1)/Wall.Map.SizeBlock][this.LeftBottomCorner[1]/Wall.Map.SizeBlock - 1] == 1 || Wall.MapArray[this.RightBottomCorner[0]/Wall.Map.SizeBlock][(this.RightBottomCorner[1]+1)/Wall.Map.SizeBlock -1] == 1) {
+				System.out.println("In Down 2");
 				if(Wall.MapArray[(PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock][(PointY+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock - 1] != 1) {
-					//System.out.println("In Down 3");
+					System.out.println("In Down 3");
 					Character.RealX = (PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock*Wall.Map.SizeBlock;
 				}
 			}
@@ -79,43 +81,43 @@ public class BlinkToGap {
 			}	
 		}
 		else if(Direction == "Left") {
-			System.out.println("In Left 1");
+			//System.out.println("In Left 1");
 			if(Wall.MapArray[(this.LeftBottomCorner[0]+1)/Wall.Map.SizeBlock -1][(this.LeftBottomCorner[1]+1)/Wall.Map.SizeBlock] == 1 || Wall.Map.ArrayMap[(this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock -1][(this.LeftTopCorner[1]-1)/Wall.Map.SizeBlock] == 1) {
-				System.out.println("In Left 2");
+				//System.out.println("In Left 2");
 				if(Wall.MapArray[(PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock -1][(PointY+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock] != 1) {
-					System.out.println("In Left 3");
+					//System.out.println("In Left 3");
 					Character.RealY = (PointY+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock*Wall.Map.SizeBlock;
 					this.HaveBlink = 1;
 				}
 			}
 		}
 		else if(Direction == "Up") {
-			System.out.println("In Up");
-			System.out.println((this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock);
-			System.out.println(this.LeftTopCorner[1]/Wall.Map.SizeBlock + 1);
-			System.out.println(Wall.MapArray[(this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock][(this.LeftTopCorner[1]-1)/Wall.Map.SizeBlock + 1]);
+			//System.out.println("In Up");
+			//System.out.println((this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock);
+			//System.out.println(this.LeftTopCorner[1]/Wall.Map.SizeBlock + 1);
+			//System.out.println(Wall.MapArray[(this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock][(this.LeftTopCorner[1]-1)/Wall.Map.SizeBlock + 1]);
 			if(Wall.MapArray[(this.LeftTopCorner[0]+1)/Wall.Map.SizeBlock][(this.LeftTopCorner[1]-1)/Wall.Map.SizeBlock + 1] == 1 ) {//|| Wall.MapArray[this.RightTopCorner[0]/Wall.Map.SizeBlock][this.RightTopCorner[1]/Wall.Map.SizeBlock + 1] == 1) {
-				System.out.println("In Up 2");
+				//System.out.println("In Up 2");
 				if(Wall.MapArray[(PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock][(PointY+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock + 1] != 1) {
-					System.out.println("In Up 3");
+					//System.out.println("In Up 3");
 					Character.RealX = (PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock*Wall.Map.SizeBlock;
 					this.HaveBlink = 1;
 				}
 			}
 		}
 		else if(Direction == "Down"){
-			System.out.println("In Down");
+			//System.out.println("In Down");
 			if(Wall.MapArray[(this.LeftBottomCorner[0]+1)/Wall.Map.SizeBlock][this.LeftBottomCorner[1]/Wall.Map.SizeBlock - 1] == 1 || Wall.MapArray[this.RightBottomCorner[0]/Wall.Map.SizeBlock][this.RightBottomCorner[1]/Wall.Map.SizeBlock -1] ==1) {
-				System.out.println("In Down 2");
+				//System.out.println("In Down 2");
 				if(Wall.MapArray[(PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock][(PointY+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock - 1] != 1) {
-					System.out.println("In Down 3");
+					//System.out.println("In Down 3");
 					Character.RealX = (PointX+Wall.Map.SizeBlock/2)/Wall.Map.SizeBlock*Wall.Map.SizeBlock;
 					this.HaveBlink = 1;
 				}
 			}
 		}
 		else {
-			System.out.println("Nothing");
+			//System.out.println("Nothing");
 			this.HaveBlink = 0;
 		}
 	}

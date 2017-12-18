@@ -17,6 +17,8 @@ public class MainInterface {
 	private Texture StartGame = new Texture("Text_StartGame_Size40.png");
 	private Texture ChooseMap = new Texture("Text_ChooseMap_Size40.png");
 	private Texture GreenCircle = new Texture("GreenCircle.png");
+	// width = 15.2
+	private Texture PressRight = new Texture("Text_PressRight_Size32.png");
 	private int Point = 0;
 	
 	private float MiddleScreen;
@@ -40,6 +42,7 @@ public class MainInterface {
 				this.TextSprite.draw(this.GreenCircle, (float)(this.MiddleScreen -(13*14.2)), (float)(465));
 			else
 				this.TextSprite.draw(this.GreenCircle, (float)(this.MiddleScreen - (13.7*14.2)), (float)(330));
+			this.TextSprite.draw(PressRight, (float)(this.Main.width-(15.5*28.4)), (float)10);
 			this.TextSprite.end();
 		}
 	}
@@ -52,11 +55,19 @@ public class MainInterface {
 			else if(Gdx.input.isKeyJustPressed(Keys.DOWN))
 				this.Point = (this.Point + 1)%2;
 		
-			else if(Gdx.input.isKeyPressed(Keys.RIGHT))
+			else if(Gdx.input.isKeyJustPressed(Keys.RIGHT))
 				if(this.Point == 0) {
-					this.Main.NumMap = 1;
+					//this.Main.NumMap = 0;
 					this.Main.StateGame = "GameRunning";
 					this.Main.create();
+					this.dispose();
 				}
+	}
+	
+	private void dispose() {
+		this.PressRight.dispose();
+		this.StartGame.dispose();
+		this.ChooseMap.dispose();
+		this.GreenCircle.dispose();
 	}
 }

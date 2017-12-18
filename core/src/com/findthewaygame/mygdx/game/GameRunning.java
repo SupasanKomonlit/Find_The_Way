@@ -12,6 +12,9 @@ public class GameRunning {
 	public int FastSpeed = 6;
 	public Wall Wall;
 	public CheckMap CheckMap;
+	public String GameStatus = "GamePlay";
+	public int Type = 0;
+	public CheckHero CheckCharacter;
 	
 	public GameRunning(MainGame Main) {
 		this.DataMap = new DrawMap(Main.SizeBlock, Main.width/Main.SizeBlock, Main.height/Main.SizeBlock, Main.NumMap);
@@ -20,6 +23,7 @@ public class GameRunning {
 		this.CheckMap = new CheckMap(this.DataMap, this);
 		this.Player = new WhiteCharacter(1,1,this.DataMap , this);
 		this.Enemy = new EnemyCharacter(this);
+		this.CheckCharacter = new CheckHero(this.DataMap);
 	}
 	
 	public void Draw() {

@@ -17,13 +17,19 @@ public class WhiteCharacter {
 		this.Map = Map;
 		this.Game = Game;
 		this.Speed = this.Game.NormalSpeed;
-		RealX = StartX*this.Map.SizeBlock;
-		RealY = StartY*this.Map.SizeBlock;
+		this.RealX = StartX*this.Map.SizeBlock;
+		this.RealY = StartY*this.Map.SizeBlock;
 	}
-	
+
 	public void DrawPicture() {
 		DrawPlayer.begin();
 		DrawPlayer.draw(WhiteCircle,RealX,RealY);
+		if(this.Game.CheckMap.ReadMap(this.RealX+(this.Map.SizeBlock/2), this.RealY+(this.Map.SizeBlock/2))==9) {
+			this.Game.GameStatus = "YouWin";
+			this.Game.Main.StateGame = "GameResult";
+			this.Game.DataMap.dispose();
+			this.Game.Main.create();
+		}
 		DrawPlayer.end();
 	}
 	

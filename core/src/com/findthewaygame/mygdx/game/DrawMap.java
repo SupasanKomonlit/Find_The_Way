@@ -42,9 +42,18 @@ public class DrawMap {
 				else if(ArrayMap[x][y] == 1)
 					BlockSprite.draw(WallBlock, (x*SizeBlock), (y*SizeBlock));
 				else if(ArrayMap[x][y] == 8)
-					BlockSprite.draw(GreenBlock, (x*SizeBlock), (y*SizeBlock));
+					//BlockSprite.draw(GreenBlock, (x*SizeBlock), (y*SizeBlock));
+					BlockSprite.draw(BlackBlock, (x*SizeBlock), (y*SizeBlock));
 			}
 		}
 		BlockSprite.end();
+	}
+	
+	public void dispose() {
+		this.WallBlock.dispose();
+		this.BlackBlock.dispose();
+		this.GreenBlock.dispose();
+		this.WhiteBlock.dispose();
+		this.BlockSprite.dispose();
 	}
 }
