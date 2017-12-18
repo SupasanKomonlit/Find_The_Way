@@ -31,7 +31,7 @@ public class EnemyCharacter {
 				this.Game.DataMap.dispose();
 			}
 			else {
-				System.out.println("False");
+			//	System.out.println("False");
 			}
 		}
 	}

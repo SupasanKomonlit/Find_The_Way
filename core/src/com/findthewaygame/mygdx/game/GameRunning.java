@@ -8,8 +8,8 @@ public class GameRunning {
 	public MainGame Main;
 	public WhiteCharacter Player;
 	public EnemyCharacter Enemy;
-	public int NormalSpeed = 3;
-	public int FastSpeed = 6;
+	public int NormalSpeed = 5;
+	public int FastSpeed = 10;
 	public Wall Wall;
 	public CheckMap CheckMap;
 	public String GameStatus = "GamePlay";

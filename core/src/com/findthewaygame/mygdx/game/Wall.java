@@ -228,7 +228,7 @@ public class Wall {
 			if(Direction == "Right") {
 				CheckX = (this.RightBottomCorner[0] + Speed)/this.Map.SizeBlock;
 				CheckY = (this.RightBottomCorner[1] + 1)/this.Map.SizeBlock;
-				//System.out.println("Line 39 : "+CheckX+" "+CheckY + "   Value of Map : "+this.Map.ArrayMap[CheckX][CheckY]);
+				//System.out.println("Line 232 : "+CheckX+" "+CheckY);
 				if(this.Map.ArrayMap[CheckX][CheckY]==1) 
 					continue;
 				CheckX = (this.RightTopCorner[0] + Speed)/this.Map.SizeBlock;

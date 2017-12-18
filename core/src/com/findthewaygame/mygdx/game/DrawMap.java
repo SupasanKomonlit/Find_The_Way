@@ -9,7 +9,7 @@ public class DrawMap {
 	public int AllX;
 	public int AllY;
 	public int SizeBlock;
-	private SetMap SetArrayMap = new SetMap();
+	public SetMap SetArrayMap = new SetMap();
 	private Texture WhiteBlock = new Texture("WhiteBlock.png");
 	private Texture GreenBlock = new Texture("GreenBlock.png");
 	private Texture BlackBlock = new Texture("BlackBlock.png");

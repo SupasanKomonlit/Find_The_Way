@@ -6,10 +6,10 @@ public class CheckHero {
 		this.Map = Map;
 	}
 	public boolean CheckBlock(WhiteCharacter Player, YellowCharacter Enemy){
-		System.out.println(this.CenterPoint(Player.RealX));
-		System.out.println(this.CenterPoint(Player.RealY));
-		System.out.println(this.CenterPoint(Enemy.RealX));
-		System.out.println(this.CenterPoint(Enemy.RealY));
+		//System.out.println(this.CenterPoint(Player.RealX));
+		//System.out.println(this.CenterPoint(Player.RealY));
+		//System.out.println(this.CenterPoint(Enemy.RealX));
+		//System.out.println(this.CenterPoint(Enemy.RealY));
 		if(this.CenterPoint(Player.RealX)==this.CenterPoint(Enemy.RealX) && this.CenterPoint(Player.RealY) == this.CenterPoint(Enemy.RealY)) {
 			return true;
 		}

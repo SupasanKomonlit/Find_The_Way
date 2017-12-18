@@ -19,6 +19,7 @@ public class AfterGameInterface {
 	//widht 9.8
 	private Texture PlayAgain = new Texture("Text_PlayAgain_Size40.png");
 	private Texture NextMap = new Texture("Text_NextMap_Size40.png");
+	private Texture NextMap2 = new Texture("Text_NextMap_Size40_2.png");
 	private Texture MainMenu = new Texture("Text_MainMenu_Size40.png");
 	private float Distance9;
 	//widht 15.2
@@ -63,7 +64,10 @@ public class AfterGameInterface {
 		}
 		else if(this.Game.GameStatus == "YouWin") {
 			this.TextSprite.draw(this.GameWin, this.Distance10, 520);
-			this.TextSprite.draw(NextMap, Distance9, 380);
+			if(this.Game.Main.NumMap<this.Game.DataMap.SetArrayMap.MaxMap)
+				this.TextSprite.draw(NextMap, Distance9, 380);
+			else
+				this.TextSprite.draw(NextMap2, Distance9, 380);
 			this.TextSprite.draw(PlayAgain, this.Distance9, 300);
 			this.TextSprite.draw(MainMenu, Distance9, 220);
 			if(this.Point == 0)
@@ -87,7 +91,13 @@ public class AfterGameInterface {
 			}
 			else if(Gdx.input.isKeyJustPressed(Keys.RIGHT)) {
 				System.out.println(this.Point);
-				if(this.Point == 0) {}
+				if(this.Point == 0) {
+					if(this.Game.Main.NumMap<this.Game.DataMap.SetArrayMap.MaxMap) {
+						this.Game.Main.NumMap ++;
+						this.Game.Main.StateGame = "GameRunning";
+						this.Game.Main.create();
+					}
+				}
 				else if(this.Point == 1) {
 					this.Game.Main.StateGame = "GameRunning";
 //					this.Game.Main.StateGame = "NowLoading";
